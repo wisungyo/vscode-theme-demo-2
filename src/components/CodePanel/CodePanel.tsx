@@ -12,6 +12,7 @@ export interface CodePanelProps {
 
 export default function CodePanel({ code, theme, language }: CodePanelProps) {
   const [html, setHtml] = useState<string>('');
+  const [bgColor, setBgColor] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getFileExtension = (lang: string) => {
@@ -42,6 +43,12 @@ export default function CodePanel({ code, theme, language }: CodePanelProps) {
           theme: theme,
         });
         if (isMounted) {
+          const match = highlighted.match(/background-color:\s*(#[0-9a-fA-F]+)/i);
+          if (match && match[1]) {
+            setBgColor(match[1]);
+          } else {
+            setBgColor('');
+          }
           setHtml(highlighted);
           setIsLoading(false);
         }
@@ -59,7 +66,10 @@ export default function CodePanel({ code, theme, language }: CodePanelProps) {
   }, [code, theme, language]);
 
   return (
-    <div className={styles.window}>
+    <div 
+      className={styles.window}
+      style={bgColor ? { backgroundColor: bgColor } : undefined}
+    >
       <div className={styles.titleBar}>
         <div className={styles.controls}>
           <span className={`${styles.control} ${styles.close}`}></span>
