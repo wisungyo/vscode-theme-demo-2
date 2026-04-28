@@ -14,6 +14,23 @@ export default function CodePanel({ code, theme, language }: CodePanelProps) {
   const [html, setHtml] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const getFileExtension = (lang: string) => {
+    const map: Record<string, string> = {
+      javascript: 'js',
+      typescript: 'ts',
+      python: 'py',
+      java: 'java',
+      cpp: 'cpp',
+      csharp: 'cs',
+      go: 'go',
+      rust: 'rs',
+      php: 'php',
+      dart: 'dart'
+    };
+    return map[lang] || lang;
+  };
+
+
   useEffect(() => {
     let isMounted = true;
     setIsLoading(true);
@@ -49,7 +66,7 @@ export default function CodePanel({ code, theme, language }: CodePanelProps) {
           <span className={`${styles.control} ${styles.minimize}`}></span>
           <span className={`${styles.control} ${styles.maximize}`}></span>
         </div>
-        <div className={styles.title}>example.{language === 'javascript' ? 'js' : language === 'typescript' ? 'ts' : language}</div>
+        <div className={styles.title}>example.{getFileExtension(language)}</div>
         <div className={styles.placeholder}></div>
       </div>
       <div className={`${styles.content} ${isLoading ? styles.loading : ''}`}>
