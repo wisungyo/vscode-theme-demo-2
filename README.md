@@ -16,21 +16,54 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How This Project Is Built
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is vibe-coded using Gemini 3 Pro High via Antigravity (Google's AI Coding Assistant).
 
-## Learn More
+Only 5 prompts were used to create this project.
 
-To learn more about Next.js, take a look at the following resources:
+Prompt 1:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+right now you are a senior software engineer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+plan and design me a solid web app to demo many vs code themes.
 
-## Deploy on Vercel
+keep the UI simple.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I just need a simple drop down to show vs code theme and a panel for showing the code with the highligthing.
+when user change the theme, the highlighting should change.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+i dont know where to get the vs code themes. but i need it in here.
+
+use modern framework, like nextjs or whatever which trending right now and good for this case.
+
+make the code clean because i need this to be my portfolio.
+
+also make the project structure clean and keep it best practice.
+```
+
+Prompt 2:
+
+```
+add options for programming language as well.
+like javascript, typescript, go, php, rust, dart. lets provide top 10 programming language now adays
+```
+
+Prompt 3:
+
+```
+when selecting light theme, the panel background not changed to light as well. it stays dark. fix it.
+```
+
+Prompt 4:
+
+```
+in mobile view, the responsiveness is breaking. the length of theme and language value is not the same. so the text not aligned properly.
+```
+
+Prompt 5:
+
+```
+make the toolbar selectable area is covering all element, not only in the right side which in value element / component
+```
