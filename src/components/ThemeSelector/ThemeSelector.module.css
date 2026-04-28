@@ -58,3 +58,23 @@
 .select:focus + .chevron {
   color: var(--accent);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0.5rem;
+  }
+  
+  .selectWrapper {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+}
+

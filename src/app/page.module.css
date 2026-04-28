@@ -42,6 +42,7 @@
 .toolbar {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
   position: sticky;
@@ -74,5 +75,10 @@
   
   .main {
     padding: 2rem 1rem;
+  }
+
+  .toolbar {
+    top: 1rem;
+    gap: 0.5rem;
   }
 }
