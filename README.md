@@ -1,3 +1,6 @@
+<img width="1661" height="658" alt="image" src="https://github.com/user-attachments/assets/e2cdfc7c-0256-4bca-ab67-055c086c2e29" />
+
+
 ## How This Project Is Built
 
 This project is vibe-coded using Gemini 3 Pro High via Antigravity (Google's AI Coding Assistant).
