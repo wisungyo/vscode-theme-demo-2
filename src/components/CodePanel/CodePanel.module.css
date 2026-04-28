@@ -1,0 +1,83 @@
+.window {
+  width: 100%;
+  max-width: 900px;
+  background: var(--background-start);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  margin: 0 auto;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.placeholder {
+  width: 52px; /* To balance the title in the center */
+}
+
+.content {
+  padding: 1.5rem;
+  min-height: 300px;
+  transition: opacity 0.3s ease;
+  overflow-x: auto;
+}
+
+.loading {
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  font-family: var(--font-geist-mono), monospace;
+  color: var(--text-secondary);
+  animation: pulse 1.5s infinite;
+}
+
+.codeContainer {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Override shiki default styles to fit our container if needed */
+.codeContainer pre {
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
