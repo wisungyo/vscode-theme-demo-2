@@ -10,30 +10,33 @@ export interface LanguageSelectorProps {
 }
 
 export default function LanguageSelector({ selectedLanguage, onLanguageChange, languages }: LanguageSelectorProps) {
+  const selectedLanguageName = languages.find(l => l.id === selectedLanguage)?.name || selectedLanguage;
+
   return (
     <div className={styles.container}>
-      <label htmlFor="language-select" className={styles.label}>
+      <span className={styles.label}>
         Language:
-      </label>
+      </span>
       <div className={styles.selectWrapper}>
-        <select
-          id="language-select"
-          className={styles.select}
-          value={selectedLanguage}
-          onChange={(e) => onLanguageChange(e.target.value)}
-        >
-          {languages.map((lang) => (
-            <option key={lang.id} value={lang.id}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
+        <span className={styles.selectedValue}>{selectedLanguageName}</span>
         <div className={styles.chevron}>
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>
+      <select
+        id="language-select"
+        className={styles.invisibleSelect}
+        value={selectedLanguage}
+        onChange={(e) => onLanguageChange(e.target.value)}
+      >
+        {languages.map((lang) => (
+          <option key={lang.id} value={lang.id}>
+            {lang.name}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

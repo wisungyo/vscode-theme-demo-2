@@ -10,6 +10,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: var(--transition);
+  position: relative;
 }
 
 .container:hover {
@@ -29,20 +30,28 @@
   align-items: center;
 }
 
-.select {
-  appearance: none;
-  background: transparent;
+.selectedValue {
   color: var(--text-primary);
   font-size: 1rem;
-  font-family: inherit;
   font-weight: 600;
-  border: none;
   padding-right: 2rem;
-  cursor: pointer;
-  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.select option {
+.invisibleSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.invisibleSelect option {
   background: var(--background-start);
   color: var(--text-primary);
 }
@@ -55,7 +64,7 @@
   transition: var(--transition);
 }
 
-.select:focus + .chevron {
+.container:focus-within .chevron {
   color: var(--accent);
 }
 
@@ -72,9 +81,8 @@
     width: 100%;
   }
 
-  .select {
+  .selectedValue {
     width: 100%;
     font-size: 0.875rem;
   }
 }
-
